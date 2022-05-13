@@ -23,7 +23,9 @@ class ListViewTwoScreen extends StatelessWidget {
             return ListTile(
               title: Text(options[index]),
               leading: const Icon(Icons.ac_unit_outlined),
-              trailing: const Icon(Icons.arrow_forward_ios),
+              trailing: const Icon(Icons.arrow_forward_ios,
+               color: Colors.indigoAccent,
+              ),
               onTap: () {
                 final String item = options[index];
                 print(item);
