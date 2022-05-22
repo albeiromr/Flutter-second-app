@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:second_app/router/app_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,13 +15,14 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: ListView.separated(
             itemBuilder: (context, index) => ListTile(
-                  title: const Text("Ruta"),
-                  leading: const Icon(Icons.route_outlined,
+                  title: Text(AppRouter.appRoutes[index].name),
+                  leading: Icon(AppRouter.appRoutes[index].icon,
                       color: Colors.indigoAccent),
-                  onTap: () => Navigator.pushNamed(context, "list-two")
+                  onTap: () => Navigator.pushNamed(
+                      context, AppRouter.appRoutes[index].route)
                 ),
             separatorBuilder: (context, index) => const Divider(),
-            itemCount: 10),
+            itemCount: AppRouter.appRoutes.length),
       ),
     );
   }

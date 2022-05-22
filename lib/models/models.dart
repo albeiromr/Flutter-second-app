@@ -1,0 +1,1 @@
+export 'package:second_app/models/menu_option.model.dart';

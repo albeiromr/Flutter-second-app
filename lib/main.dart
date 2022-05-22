@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Material App",
       initialRoute: AppRouter.initialRoute,
-      routes: AppRouter.routes,
+      routes: AppRouter.buildRoutes(),
       //ongenerated route es como la ruta 404 en la web es lo que hace
       //el router cuando la ruta no existe
       onGenerateRoute: AppRouter.onGenerateRoute,
