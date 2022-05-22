@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:second_app/screens/screens.dart';
+import 'package:second_app/router/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Material App",
-      //home: ListViewTwoScreen(),
-      initialRoute: "list-two",
-      routes: <String, WidgetBuilder>{
-        "list-two": (BuildContext context) => ListViewTwoScreen(),
-        "list-one": (BuildContext context) => ListViewOneScreen(),
-        "alert-string": (BuildContext context) => const AlertScreen(),
-        "card-string": (BuildContext context) => const CardScreen()
-      },
+      initialRoute: AppRouter.initialRoute,
+      routes: AppRouter.routes,
+      //ongenerated route es como la ruta 404 en la web es lo que hace
+      //el router cuando la ruta no existe
+      onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }
